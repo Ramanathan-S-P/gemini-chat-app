@@ -1,4 +1,5 @@
-import { Box, Flex, Button, Heading, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, Button, Heading, useColorModeValue, HStack } from '@chakra-ui/react';
+import { BiBrain } from 'react-icons/bi';
 import { useAuth } from './Auth/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,13 +16,16 @@ export const Header = () => {
   return (
     <Box bg={bgColor} px={4} shadow="sm">
       <Flex h={16} alignItems="center" justifyContent="space-between">
-        <Heading 
-          color="blue.600" 
-          fontSize="2xl"
-          fontWeight="medium"
-        >
-          Chat with Gemini AI
-        </Heading>
+        <HStack spacing={3}>
+          <BiBrain size="24px" color="#4299E1" />
+          <Heading 
+            color="blue.600" 
+            fontSize="2xl"
+            fontWeight="medium"
+          >
+            Chat with Gemini AI
+          </Heading>
+        </HStack>
         
         {user && (
           <Flex alignItems="center">
